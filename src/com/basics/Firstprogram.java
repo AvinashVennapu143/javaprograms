@@ -4,20 +4,31 @@ import java.util.Scanner;
  
 
 public class Firstprogram {
-
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
-		
-		String response="iqiq";
-		int i = 1;
-		while(!response.equals("Q") && i <3) {
-			System.out.print("u are playing a game");
-			System.out.println("enter q to quit game");
-			response=scanner.next().toUpperCase();
-			i++;
+		// SIMPLE GAME LOOP - Modified by [Friend's Name]
+		String userInput = "";
+		int attempts = 0;
+		boolean gameRunning = true;
+
+		System.out.println("=== SIMPLE GAME ===");
+		System.out.println("Type QUIT to exit");
+
+		while(gameRunning && attempts < 3) {
+		    System.out.print("Enter command: ");
+		    userInput = scanner.next().toUpperCase();
+		    
+		    if(userInput.equals("QUIT")) {
+		        gameRunning = false;
+		        System.out.println("Exiting game...");
+		    } else {
+		        System.out.println("Unknown command: " + userInput);
+		    }
+		    
+		    attempts++;
 		}
-			System.out.println("u quite the game");
+		System.out.println("Game session ended.");
 		
 //		String name = "";
 //		while(name.isEmpty()) {
