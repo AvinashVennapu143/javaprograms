@@ -7,6 +7,7 @@ public class Firstprogram {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+
 		// SIMPLE GAME LOOP - Modified by [Friend's Name]
 		String userInput = "";
 		int attempts = 0;
@@ -24,11 +25,44 @@ public class Firstprogram {
 		        System.out.println("Exiting game...");
 		    } else {
 		        System.out.println("Unknown command: " + userInput);
+
+		
+		
+		// GAME LOOP - Modified by Shashank
+		String response = "";
+		int maxAttempts = 5;
+		 attempts = 0;
+		boolean wantToQuit = false;
+
+		System.out.println("=== WELCOME TO THE GAME ===");
+		System.out.println("You have " + maxAttempts + " attempts to play");
+
+		while(!wantToQuit && attempts < maxAttempts) {
+		    System.out.println("\n--- Attempt " + (attempts + 1) + " of " + maxAttempts + " ---");
+		    System.out.print("You are playing a game. ");
+		    System.out.println("Enter Q to quit, or any key to continue: ");
+		    
+		    response = scanner.next().toUpperCase();
+		    
+		    if(response.equals("Q")) {
+		        wantToQuit = true;
+		        System.out.println("You chose to quit the game.");
+		    } else {
+		        System.out.println("Continuing game... (Press Q next time to quit)");
+
 		    }
 		    
 		    attempts++;
 		}
+
 		System.out.println("Game session ended.");
+
+
+		if(!wantToQuit) {
+		    System.out.println("\nGame over! You used all " + maxAttempts + " attempts.");
+		}
+		System.out.println("Thanks for playing!");
+		    }
 		
 //		String name = "";
 //		while(name.isEmpty()) {
