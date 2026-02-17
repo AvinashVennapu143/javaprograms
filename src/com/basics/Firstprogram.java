@@ -9,11 +9,13 @@ public class Firstprogram {
 		Scanner scanner = new Scanner(System.in);
 		
 		
-		String response="";
-		while(!response.equals("Q")) {
+		String response="iqiq";
+		int i = 1;
+		while(!response.equals("Q") && i <3) {
 			System.out.print("u are playing a game");
 			System.out.println("enter q to quit game");
 			response=scanner.next().toUpperCase();
+			i++;
 		}
 			System.out.println("u quite the game");
 		
