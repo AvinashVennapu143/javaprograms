@@ -7,7 +7,8 @@ public class Inheritance {
 		Puppy.bark();
 		NewBorn NewBorn= new NewBorn();
 		NewBorn.bark();
-	
+		System.out.println("===============");
+		System.out.println("I'm shashank added new line");
 
 	}
 
