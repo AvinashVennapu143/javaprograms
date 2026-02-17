@@ -9,15 +9,36 @@ public class Firstprogram {
 		Scanner scanner = new Scanner(System.in);
 		
 		
-		String response="iqiq";
-		int i = 1;
-		while(!response.equals("Q") && i <3) {
-			System.out.print("u are playing a game");
-			System.out.println("enter q to quit game");
-			response=scanner.next().toUpperCase();
-			i++;
+		// GAME LOOP - Modified by Shashank
+		String response = "";
+		int maxAttempts = 5;
+		int attempts = 0;
+		boolean wantToQuit = false;
+
+		System.out.println("=== WELCOME TO THE GAME ===");
+		System.out.println("You have " + maxAttempts + " attempts to play");
+
+		while(!wantToQuit && attempts < maxAttempts) {
+		    System.out.println("\n--- Attempt " + (attempts + 1) + " of " + maxAttempts + " ---");
+		    System.out.print("You are playing a game. ");
+		    System.out.println("Enter Q to quit, or any key to continue: ");
+		    
+		    response = scanner.next().toUpperCase();
+		    
+		    if(response.equals("Q")) {
+		        wantToQuit = true;
+		        System.out.println("You chose to quit the game.");
+		    } else {
+		        System.out.println("Continuing game... (Press Q next time to quit)");
+		    }
+		    
+		    attempts++;
 		}
-			System.out.println("u quite the game");
+
+		if(!wantToQuit) {
+		    System.out.println("\nGame over! You used all " + maxAttempts + " attempts.");
+		}
+		System.out.println("Thanks for playing!");
 		
 //		String name = "";
 //		while(name.isEmpty()) {
